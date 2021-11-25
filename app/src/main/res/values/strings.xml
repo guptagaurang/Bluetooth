@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Bluetooth Music</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_valid_email">Enter Valid Email</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_confirm_password">Enter Confirm Password</string>
+    <string name="please_enter_valid_password">Please Enter Valid Password</string>
+    <string name="password_is_not_match">Password is not match</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="recently_played">Recently Played</string>
+    <string name="logout">Logout</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="all_songs">All Songs</string>
+    <string name="best_artist_playlist">Best Artist Playlist</string>
+    <string name="create">Create</string>
+    <string name="enter_playlist_name">Enter Playlist Name</string>
+    <string name="home">Home</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="enter_old_password">Enter Old Password</string>
+    <string name="submit">Submit</string>
+    <string name="select_image">Select Image</string>
+    <string name="individual">Individual</string>
+    <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign Up here</string>
+    <string name="already_have_an_account_sign_in_here">Already have an account ? Sign In Here</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="update">Update</string>
+    <string name="search">Search</string>
+    <string name="playlist">Playlist</string>
+    <string name="premium">Premium</string>
+</resources>

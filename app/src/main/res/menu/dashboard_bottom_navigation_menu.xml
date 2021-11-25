@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_playlist"
+        android:icon="@drawable/ic_play"
+        android:title="@string/playlist"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_premium"
+        android:icon="@drawable/ic_bluetooth_audio"
+        android:title="@string/premium"
+        app:showAsAction="ifRoom" />
+
+</menu>

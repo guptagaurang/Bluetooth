@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TwoHorizontalTextView">
+        <attr name="showSecondText" format="boolean" />
+        <attr name="textSizeFirstText" format="dimension"/>
+        <attr name="textSizeSecondText" format="dimension"/>
+        <attr name="maxLengthFirstText" format="integer" />
+        <attr name="maxLengthSecondText" format="integer" />
+        <attr name="textFirstText" format="string" />
+        <attr name="textSecondText" format="string" />
+        <attr name="textColorFirstText" format="color"/>
+        <attr name="textColorSecondText" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="EditorView">
+        <attr name="hintEditor" format="string" />
+
+        <attr name="image" format="reference" />
+        <attr name="backgroundColorEditor" format="reference" />
+        <attr name="backgroundEditor" format="reference" />
+        <attr name="backgroundImage" format="reference" />
+        <attr name="backgroundImageColor" format="reference" />
+
+        <attr name="symmetricPadding" format="dimension" />
+        <attr name="imageSymmetricPadding" format="dimension" />
+        <attr name="editorSymmetricPadding" format="dimension" />
+
+    </declare-styleable>
+
+</resources>

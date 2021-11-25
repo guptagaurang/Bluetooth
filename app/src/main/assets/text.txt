@@ -1,0 +1,256 @@
+{
+                                String createDate = new SimpleDateFormat("yyyy-MM-dd hh:mm a", Locale.ENGLISH).format(new Date());
+                                String image = "IMG_" + Calendar.getInstance().getTime() + ".png";
+                                RecentlyPlaylist playlist = musicPlaylistObserver.getRecentlyPlaylists().get(adapterPosition);
+
+                                PlaylistDatabaseHelper playlistDatabaseHelper = new PlaylistDatabaseHelper(context);
+                                ObjectObserver addSongPlaylistsObject = playlistDatabaseHelper.addSongPlaylist(VariableConstants.id, "1", playlist.getTitle(), playlist.getTitle(), "0", createDate, createDate);
+
+                                Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                        VariableConstants.id,
+                                        initializePrettyPrintJson(addSongPlaylistsObject));
+
+                                Toast.makeText(context, addSongPlaylistsObject.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                if (addSongPlaylistsObject.isSuccess()) {
+                                    try {
+                                        RemoteMessage remoteMessage = new RemoteMessage();
+                                        remoteMessage.setTitle("Hii, " + playlist.getTitle());
+                                        remoteMessage.setBody(playlistsObject.getMessage());
+
+                                        Notification.showNotification(context, remoteMessage);
+                                    } catch (JSONException exception) {
+                                        Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                exception);
+                                    } finally {
+
+                                    }
+                                }
+                            }
+
+
+
+
+
+
+
+                                    private class RecentlyViewHolder extends BaseHolder<MusicPlaylistObserver, OnMusicPlaylistObserver> {
+
+                                        private RecyclerView recentlyPlaylistRecyclerView;
+                                        private OnMusicPlaylistObserver observer;
+
+                                        public RecentlyViewHolder(View itemView) {
+                                            super(itemView);
+
+                                            recentlyPlaylistRecyclerView = (RecyclerView) bindView(itemView, R.id.recentlyPlaylistRecyclerView);
+                                            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
+                                            recentlyPlaylistRecyclerView.setLayoutManager(linearLayoutManager);
+                                        }
+
+                                        @Override
+                                        public void onBind(int position, MusicPlaylistObserver musicPlaylistObserver, List<MusicPlaylistObserver> records, OnMusicPlaylistObserver observer) {
+                                            this.observer = observer;
+
+                                            GenericRecordsAdapter<RecentlyPlaylist, OnPlaylistObserver> adapter = new GenericRecordsAdapter<RecentlyPlaylist, OnPlaylistObserver>() {
+                                                private OnPlaylistObserver recentlyPlaylistObserver;
+
+                                                class RecentlyPlaylistViewHolder extends BaseHolder<RecentlyPlaylist, OnPlaylistObserver> {
+                                                    private AppCompatImageView audioImagePlaylist;
+                                                    private AppCompatImageView favouriteImageView;
+                                                    private EllipsizeTextView titleSongPlaylist;
+                                                    private List<RecentlyPlaylist> recentlyPlaylists;
+
+                                                    public RecentlyPlaylistViewHolder(View itemView) {
+                                                        super(itemView);
+
+                                                        audioImagePlaylist = (AppCompatImageView) itemView.findViewById(R.id.audioImagePlaylist);
+                                                        titleSongPlaylist = (EllipsizeTextView) itemView.findViewById(R.id.titleSongPlaylist);
+                                                        favouriteImageView = (AppCompatImageView) itemView.findViewById(R.id.favouriteImageView);
+                                                    }
+
+                                                    @Override
+                                                    public void onBind(int position, RecentlyPlaylist recentlyPlaylist, List<RecentlyPlaylist> recentlyPlaylists, OnPlaylistObserver onRecentlyPlaylistObserver) {
+                                                        this.recentlyPlaylists = recentlyPlaylists;
+
+                                                        File file = new File(recentlyPlaylist.getTitle());
+                                                        String strFileName = file.getName() + " :: " + Constants.getFileSizeLabel(file);
+                                                        Logger.log(LoggerMessage.SONG_NAME, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                strFileName,
+                                                                file.length());
+
+                                                        titleSongPlaylist.setText(strFileName);
+
+                                                        playlist();
+
+                                                        itemView.setOnClickListener(this);
+                                                        favouriteImageView.setOnClickListener(this);
+                                                    }
+
+                                                    private void playlist() {
+                                                        try {
+                                                            ObjectObserver playlistsObject = playlistDatabaseHelper.showPlaylists(String.valueOf(VariableConstants.id));
+                                                            Logger.log(LoggerMessage.NONE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                    initializePrettyPrintJson(playlistsObject));
+                                                            if (playlistsObject.isSuccess()) {
+                                                                favouriteImageView.setVisibility(View.VISIBLE);
+                                                            } else {
+                                                                favouriteImageView.setVisibility(View.GONE);
+                                                            }
+                                                        } catch (Exception e) {
+                                                            Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                    e);
+                                                        }
+                                                    }
+
+                                                    @Override
+                                                    public void onClick(View view) {
+                                                        if (view == favouriteImageView) {
+                                                            recentlyPlaylistObserver.onAddPlaylist(getAdapterPosition(), recentlyPlaylists);
+                                                        }
+
+                                                        if (view == itemView) {
+                                                            recentlyPlaylistObserver.onPlayMusic(getAdapterPosition());
+                                                        }
+                                                    }
+                                                }
+
+                                                @Override
+                                                public BaseHolder<RecentlyPlaylist, OnPlaylistObserver> setViewHolder(ViewGroup parent, int typeOfView, OnPlaylistObserver onRecentlyPlaylistObserver) {
+                                                    int layout_recently_playlist_song = R.layout.layout_recently_playlist_song;
+                                                    return new RecentlyPlaylistViewHolder(LayoutInflater.from(parent.getContext()).inflate(layout_recently_playlist_song, parent, false));
+                                                }
+
+                                                @Override
+                                                protected void onBindData(BaseHolder<RecentlyPlaylist, OnPlaylistObserver> holder, int position, RecentlyPlaylist recentlyPlaylist, List<RecentlyPlaylist> records, OnPlaylistObserver recentlyPlaylistObserver) {
+                                                    this.recentlyPlaylistObserver = recentlyPlaylistObserver;
+                                                    Logger.logger(LoggerMessage.RECENTLY_PLAYLIST, false, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                            recentlyPlaylist.getTitle(),
+                                                            recentlyPlaylist.getNotifications(),
+                                                            recentlyPlaylist.getImages(),
+                                                            recentlyPlaylist.getRecentlyPlaylistClickObserver()
+                                                    );
+
+                                                }
+                                            };
+                                            adapter.addItemsObserver(musicPlaylistObserver.getRecentlyPlaylists());
+                                            recentlyPlaylistRecyclerView.setAdapter(adapter);
+                                            adapter.setOnClickObserver(new OnPlaylistObserver() {
+                                                @Override
+                                                public void onPlayMusic(int adapterPosition) {
+                                                    try {
+                                                        DashboardObserverActivity.instance().songCurrentPosition = adapterPosition;
+
+                                                        DashboardObserverActivity.instance().setPlaylistsMusicPlayer(musicPlaylistObserver.getRecentlyPlaylists());
+
+                                                        RecentlyPlaylist playlist = musicPlaylistObserver.getRecentlyPlaylists().get(adapterPosition);
+                                                        Logger.logger(LoggerMessage.RECENTLY_PLAYLIST, true, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                playlist);
+
+                                                        RecentlyPlaylist recentlyPlaylist = new RecentlyPlaylist(playlist.getImages(), playlist.getTitle(), playlist.getNotifications(), RecentlyPlaylistClickObserver.PROFILE);
+                                                        DashboardObserverActivity.instance().onMusicPlayer(recentlyPlaylist);
+
+                                                    } catch (IOException e) {
+                                                        Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                e);
+                                                    }
+
+                                                }
+
+                                                @Override
+                                                public void onAddPlaylist(int adapterPosition, List<RecentlyPlaylist> recentlyPlaylists) {
+                                                    try {
+                                                        ObjectObserver playlistsObject = playlistDatabaseHelper.showPlaylists(String.valueOf(VariableConstants.id));
+
+                                                        Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                initializePrettyPrintJson(recentlyPlaylists.get(adapterPosition)),
+                                                                new File(recentlyPlaylists.get(adapterPosition).getTitle()).getName());
+
+                                                        if (playlistsObject.isSuccess()) {
+                                                            favourite(playlistsObject.getSongs(), new File(recentlyPlaylists.get(adapterPosition).getTitle()).getName());
+                                                        }
+
+                                                    } catch (Exception e) {
+                                                        Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                e);
+                                                    }
+                                                }
+                                            });
+                                            itemView.setOnClickListener(this);
+                                        }
+
+                                        private void favourite(List<ObjectObserver> objectObservers, String title) {
+                                            List<ObjectObserver> observers = new ArrayList<>(objectObservers);
+
+                                            SpinnerDialog<ObjectObserver> dialog = new SpinnerDialog<>(context);
+                                            dialog.show();
+                                            dialog.setAllowButton("Ok");
+                                            dialog.setDismissButton("Cancel");
+                                            dialog.setTitleText(title);
+                                            dialog.titleSpinnerDialog.setBackground(DrawableUtils.listDrawable(context, 0f));
+                                            dialog.allowButton.setBackground(DrawableUtils.listDrawable(context));
+                                            dialog.dismissButton.setBackground(DrawableUtils.listDrawable(context));
+                                            dialog.allowButton.setTextColor(DrawableUtils.white(context));
+                                            dialog.dismissButton.setTextColor(DrawableUtils.white(context));
+
+                                            adapterPlaylist.addItemsObserver(observers);
+                                            dialog.spinnerRecyclerView.setAdapter(adapterPlaylist);
+                                            adapterPlaylist.setOnClickObserver(new OnSongPlaylistObserver() {
+                                                @Override
+                                                public void addSongPlaylist(int adapterPosition) throws Exception {
+                                                    ObjectObserver playlist = adapterPlaylist.getRecord(adapterPosition);
+                                                    Logger.log(LoggerMessage.NONE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                            initializePrettyPrintJson(playlist));
+
+                                                    ObjectObserver addSongPlaylistsObject = playlistDatabaseHelper.addSongPlaylist(VariableConstants.id, playlist.getPlaylistId(), title, playlist.getPlaylistName(), "0", Constants.createDate, Constants.createDate);
+                                                    Toast.makeText(context, addSongPlaylistsObject.getMessage(), Toast.LENGTH_SHORT).show();
+                                                    if (addSongPlaylistsObject.isSuccess()) {
+                                                        try {
+                                                            RemoteMessage remoteMessage = new RemoteMessage();
+                                                            remoteMessage.setTitle("Hii, " + playlist.getSongsName());
+                                                            remoteMessage.setBody(playlist.getMessage());
+
+                                                            Notification.showNotification(context, remoteMessage);
+                                                        } catch (JSONException exception) {
+                                                            Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
+                                                                    exception);
+                                                        } finally {
+
+                                                        }
+                                                    }
+                                                }
+                                            });
+                                            dialog.setSpinnerDialogObserver(new SpinnerDialog.SpinnerDialogObserver<ObjectObserver>() {
+                                                @Override
+                                                public void filter(String text) {
+
+                                                }
+
+                                                @Override
+                                                public void selectedObserver(ObjectObserver objectObserver) {
+
+                                                }
+
+                                                @Override
+                                                public void selectedAdapterPosition(ObjectObserver objectObserver, List<ObjectObserver> objectObservers, int adapterPosition) {
+
+                                                }
+
+                                                @Override
+                                                public void success() {
+
+                                                }
+
+                                                @Override
+                                                public void failure() {
+
+                                                }
+                                            });
+
+                                        }
+
+                                        @Override
+                                        public void onClick(View view) {
+                                            observer.onRecentlyPlayer(RecentlyPlaylistClickObserver.PROFILE);
+                                        }
+
+                                    }

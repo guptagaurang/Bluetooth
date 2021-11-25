@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/searchPlaylistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.SearchPlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_search_playlist" />
+
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.PlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_playlist" />
+
+    <fragment
+        android:id="@+id/songPlaylistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.SongPlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_song_playlist" />
+
+    <fragment
+        android:id="@+id/premiumPlaylistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.PremiumPlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_premium_playlist" />
+
+    <fragment
+        android:id="@+id/createPlaylistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.CreatePlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_create_playlist" />
+
+    <fragment
+        android:id="@+id/updatePlaylistFragment"
+        android:name="com.android.bluetoothmusic.fragment.dashboard.UpdatePlaylistFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_update_playlist" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.android.bluetoothmusic.fragment.profile.ProfileFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.android.bluetoothmusic.fragment.profile.UpdateProfileFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_update_profile" />
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.android.bluetoothmusic.fragment.profile.ChangePasswordFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/bluetoothFragment"
+        android:name="com.android.bluetoothmusic.fragment.bluetooth.BluetoothFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_bluetooth" />
+
+</navigation>

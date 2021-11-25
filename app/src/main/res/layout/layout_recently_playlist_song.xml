@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_5"
+    android:background="@color/colorLightSalmon"
+    tools:background="@color/colorSkyBlue">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/audioImagePlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/detailsImageView"
+        android:layout_width="@dimen/height_32"
+        android:layout_height="@dimen/height_32"
+        android:layout_margin="@dimen/margin_5"
+
+        app:tint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/favouriteImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_details" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/favouriteImageView"
+        android:layout_width="@dimen/height_32"
+        android:layout_height="@dimen/height_32"
+        android:background="@drawable/ic_border_none"
+        android:layout_margin="@dimen/margin_5"
+
+        app:tint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu" />
+
+    <com.android.bluetoothmusic.widgets.EllipsizeTextView
+        android:id="@+id/titleSongPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5"
+        android:gravity="center"
+        android:text="@string/recently_played"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toBottomOf="@+id/audioImagePlaylist" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

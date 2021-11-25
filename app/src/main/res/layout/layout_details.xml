@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_login"
+    android:orientation="vertical">
+
+    <com.android.bluetoothmusic.widgets.EllipsizeTextView
+        android:id="@+id/titleSongPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5"
+        android:text="@string/recently_played"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold" />
+
+    <com.android.bluetoothmusic.widgets.EllipsizeTextView
+        android:id="@+id/sizeSongPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5"
+        android:text="@string/recently_played"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold" />
+
+    <com.android.bluetoothmusic.widgets.EllipsizeTextView
+        android:id="@+id/durationSongPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5"
+        android:text="@string/recently_played"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold" />
+
+</LinearLayout>

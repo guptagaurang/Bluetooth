@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/toggleMediaPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/margin_5"
+        android:background="@color/colorTransparent"
+        android:src="@drawable/ic_bottom" />
+
+    <LinearLayout
+        android:id="@+id/layoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.android.bluetoothmusic.widgets.EllipsizeTextView
+            android:id="@+id/titleSongPlaylistMusicPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:gravity="center_vertical"
+            android:text="@string/recently_played"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/sliderMediaPlayer"
+            style="@style/MusicSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@color/colorTransparent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:gravity="center_vertical">
+
+            <com.android.bluetoothmusic.widgets.EllipsizeTextView
+                android:id="@+id/durationSongPlaylistMusicPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_5"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/recently_played"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/shareMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_5"
+                android:layout_weight="0"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_share" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/previousMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_previous" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/backwardMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_backward" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/playMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_play" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/forwardMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_forward" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/nextMediaPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_media_player"
+                android:src="@drawable/ic_next" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

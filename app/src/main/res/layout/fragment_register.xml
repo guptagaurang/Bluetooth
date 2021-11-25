@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/usernameEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_username"
+            app:image="@drawable/ic_profile"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/emailEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_email"
+            app:image="@drawable/ic_email"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/usernameEditor"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/passwordEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_password"
+            app:image="@drawable/ic_password"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/emailEditor"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/confirmPasswordEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_confirm_password"
+            app:image="@drawable/ic_change_password"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditor"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/phoneNumberEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+            android:visibility="gone"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_phone_number"
+            app:image="@drawable/ic_password"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditor"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <com.android.bluetoothmusic.widgets.EditorView
+            android:id="@+id/addressEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+            android:visibility="gone"
+
+            app:backgroundEditor="@drawable/ic_border"
+            app:backgroundImageColor="@color/colorSlateBlue"
+            app:editorSymmetricPadding="@dimen/padding_spacing_10"
+            app:hintEditor="@string/enter_address"
+            app:image="@drawable/ic_password"
+            app:imageSymmetricPadding="@dimen/padding_spacing_10"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumberEditor"
+            app:symmetricPadding="@dimen/padding_spacing_1" />
+
+        <TextView
+            android:id="@+id/signUpButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/width_48"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@drawable/ic_login"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/colorWhite"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressEditor" />
+
+        <TextView
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account_sign_in_here"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/colorLightBlack"
+            android:layout_margin="@dimen/margin_10"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

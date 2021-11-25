@@ -1,0 +1,35 @@
+13 March 2021 and 14 March 2021
+1. RecentlyViewHolder make separate class.
+2. Duration show in Recently songs.
+3. Crashing resolved when play music directly.
+4. Add Playlist song
+5. Delete Playlist song
+6. play music in playlist song
+7. Music stop if activity destroyed or logout profile.
+8. Icon implemented.
+---------------------------------------------------------------------
+
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+implementation 'androidx.navigation:navigation-fragment:2.3.2'
+implementation 'androidx.navigation:navigation-ui:2.3.2'
+implementation 'com.squareup.picasso:picasso:2.71828'
+implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+implementation 'com.google.code.gson:gson:2.8.6'
+implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+implementation 'com.google.firebase:firebase-messaging:21.0.1'
+implementation 'com.google.firebase:firebase-installations:16.3.5'
+implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+---------------------------------------------------------------------
+9. Show Duration when play media player.
+10. Backward and forward button implemented.
+11. Shoyw details of media file in recently plalist.
+12. Media Player play next song if current finished.
+13. Share song via bluetooth when connected.
+14. Media Player controller toggle implemented.
+15. Player control by notification.
+16. Icon Implemented.
+17. Best Playlist is implemented.
+
+

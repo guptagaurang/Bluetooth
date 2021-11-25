@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="width_0">0dp</dimen>
+    <dimen name="width_2">2dp</dimen>
+    <dimen name="width_10">10dp</dimen>
+    <dimen name="width_18">18dp</dimen>
+    <dimen name="width_20">20dp</dimen>
+    <dimen name="width_25">25dp</dimen>
+    <dimen name="width_40">40dp</dimen>
+    <dimen name="width_48">48dp</dimen>
+
+    <dimen name="height_20">20dp</dimen>
+    <dimen name="height_30">30dp</dimen>
+    <dimen name="height_32">32dp</dimen>
+    <dimen name="height_36">36dp</dimen>
+    <dimen name="height_56">56dp</dimen>
+
+    <dimen name="tab_spacing">1dp</dimen>
+    <dimen name="dot_tab_dimension">10dp</dimen>
+
+    <dimen name="padding_spacing_0">0dp</dimen>
+    <dimen name="padding_spacing_1">1dp</dimen>
+    <dimen name="padding_spacing_2">2dp</dimen>
+    <dimen name="padding_spacing_4">4dp</dimen>
+    <dimen name="padding_spacing_5">5dp</dimen>
+    <dimen name="padding_spacing_8">8dp</dimen>
+    <dimen name="padding_spacing_10">10dp</dimen>
+    <dimen name="padding_spacing_12">12dp</dimen>
+    <dimen name="padding_spacing_15">15dp</dimen>
+    <dimen name="padding_spacing_18">18dp</dimen>
+    <dimen name="padding_spacing_20">20dp</dimen>
+    <dimen name="padding_spacing_25">25dp</dimen>
+    <dimen name="padding_spacing_30">30dp</dimen>
+
+    <dimen name="margin_0">0dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+
+    <dimen name="card_view_non_elevation">0dp</dimen>
+    <dimen name="card_view_elevation_1">1dp</dimen>
+    <dimen name="card_view_elevation_2">2dp</dimen>
+    <dimen name="card_view_elevation_5">5dp</dimen>
+    <dimen name="card_view_elevation_10">10dp</dimen>
+
+    <dimen name="card_view_elevation_radius_5">5dp</dimen>
+
+    <dimen name="text_size_5">5sp</dimen>
+    <dimen name="text_size_6">6sp</dimen>
+    <dimen name="text_size_7">7sp</dimen>
+    <dimen name="text_size_8">8sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_25">25sp</dimen>
+
+
+</resources>
