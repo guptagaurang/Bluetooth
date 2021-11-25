@@ -72,7 +72,6 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
             if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
                 mediaPlayer.start();
             }
-
             Logger.log(LoggerMessage.THROWABLE, Logger.getThread(Thread.currentThread().getStackTrace()[2]),
                     "Clicked Play");
         } else if (intent.getAction().equals(Constants.ACTION.PAUSE_ACTION)) {
