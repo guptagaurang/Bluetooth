@@ -48,6 +48,9 @@ import java.util.List;
 
 public class DashboardObserverActivity extends AppCompatActivity implements NavController.OnDestinationChangedListener {
 
+    //this is hte testing of the changes on the dev-branch to merge
+
+
     private static final int REQUIRE_PERMISSIONS_RESULT = 901;
     public static DashboardObserverActivity context;
 
