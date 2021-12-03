@@ -50,6 +50,8 @@ public class DashboardObserverActivity extends AppCompatActivity implements NavC
 
    //this is branch 3
 
+    //this is branch 3
+
 
     private static final int REQUIRE_PERMISSIONS_RESULT = 901;
     public static DashboardObserverActivity context;
